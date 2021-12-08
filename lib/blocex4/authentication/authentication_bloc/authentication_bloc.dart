@@ -19,17 +19,16 @@ class AuthenticationBloc
         super(const AuthenticationState.unknown()) {
     on<AuthenticationStatusChanged>(_onAuthenticationStatusChanged);
     on<AuthenticationLogoutRequested>(_onAuthenticationLogoutRequested);
-    _streamSubscription = _authenticationRepository.status.listen(
-      (event) => add(
-        AuthenticationStatusChanged(event),
-      ),
-    ) as StreamSubscription<AuthenticationState>;
+    _streamSubscription =
+        _authenticationRepository.status.listen((status) => add(
+              AuthenticationStatusChanged(status),
+            ));
   }
 
   final AuthenticationRepository _authenticationRepository;
   final UserRepository _userRepository;
 
-  late StreamSubscription<AuthenticationState> _streamSubscription;
+  late StreamSubscription<AuthenticationStatus> _streamSubscription;
 
   @override
   Future<void> close() {
