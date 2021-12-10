@@ -1,14 +1,16 @@
-import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
-import 'blocex1/app.dart';
-import 'blocex1/counter_observer.dart';
+import 'dart:async';
 
-void main() {
-  BlocOverrides.runZoned(
-    () => runApp(const CounterApp()),
-    blocObserver: CounterObserver(),
-  );
-}
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/material.dart';
+import 'bloxex5/add.dart';
+import 'bloxex5/route/app_route.dart';
+
+// void main() {
+//   BlocOverrides.runZoned(
+//     () => runApp(const CounterApp()),
+//     blocObserver: CounterObserver(),
+//   );
+// }
 
 // void main() {
 //   runApp(const TimerApp());
@@ -27,3 +29,10 @@ void main() {
 //     userRepository: UserRepository(),
 //   ));
 // }
+
+void main() {
+  runApp(MyApp(
+    appRouter: AppRouter(),
+    connectivity: Connectivity(),
+  ));
+}
