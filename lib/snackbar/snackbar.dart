@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SnackBarApp extends StatelessWidget {
@@ -41,13 +40,13 @@ class _SnackPageState extends State<SnackPage> {
           ),
           FloatingActionButton(
             onPressed: () {
-              Flushbar(
-                flushbarPosition: FlushbarPosition.TOP,
-              )
-                ..title = "Hey Ninja"
-                ..message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                ..duration = Duration(seconds: 3)
-                ..show(context);
+              // Flushbar(
+              //   flushbarPosition: FlushbarPosition.TOP,
+              // )
+              //   ..title = "Hey Ninja"
+              //   ..message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+              //   ..duration = Duration(seconds: 3)
+              //   ..show(context);
             },
           ),
           FloatingActionButton(
