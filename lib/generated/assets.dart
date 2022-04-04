@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String book = 'assets/book/bbok.epub';
   static const String splashIconLogo = 'assets/splash/icon_logo.png';
   static const String splashLogo500 = 'assets/splash/logo500.png';
   static const String splashNeslihan288 = 'assets/splash/neslihan288.jpeg';

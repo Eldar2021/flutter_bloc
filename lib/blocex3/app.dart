@@ -1,5 +1,8 @@
-import 'package:bloc_education/blocex3/posts/view/posts_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'pagination/cubit/pagination_cubit.dart';
+import 'pagination/view/pagination_view.dart';
 
 class ListApp extends StatelessWidget {
   const ListApp({Key? key}) : super(key: key);
@@ -14,7 +17,12 @@ class ListApp extends StatelessWidget {
           secondary: Color.fromRGBO(72, 74, 126, 1),
         ),
       ),
-      home: const PostsPage(),
+      home: BlocProvider(
+        create: (context) => PaginationCubit(),
+        child: const PaginationView(),
+      ),
+      // home: LazyLoad(title: "eld"),
+      // home: PostsPage(),
     );
   }
 }

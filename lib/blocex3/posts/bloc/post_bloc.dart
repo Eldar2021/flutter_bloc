@@ -9,7 +9,7 @@ part 'post_event.dart';
 
 part 'post_state.dart';
 
-const int _postLimit = 20;
+const int _postLimit = 10;
 const throttleDuration = Duration(microseconds: 100);
 
 EventTransformer<E> throttleDroppable<E>(Duration duration) {
@@ -75,4 +75,24 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     }
     throw Exception("Error _fetching posts");
   }
+
+  // Future<List<Post>> _fetchTests([int startIndex = 0]) async {
+  //   final response = await dio.post(
+  //     'https://test-docs.stores.kg/api/categories?page=1&itemsPerPage=30',
+  //     options: Options(headers: {"test_key": "test_key"}),
+  //   );
+  //   print(response.statusCode);
+  //   if (response.statusCode == 200) {
+  //     print(response.statusCode);
+  //     print(response.data);
+  //     // return (response.data as List).map((dynamic json) {
+  //     //   return Post(
+  //     //     id: json["id"] as int,
+  //     //     title: json["title"] as String,
+  //     //     body: json["body"] as String,
+  //     //   );
+  //     // }).toList();
+  //   }
+  //   throw Exception("Error _fetching posts");
+  // }
 }

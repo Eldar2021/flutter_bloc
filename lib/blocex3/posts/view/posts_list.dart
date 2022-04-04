@@ -1,9 +1,9 @@
-import 'package:bloc_education/blocex3/posts/bloc/post_bloc.dart';
-import 'package:bloc_education/blocex3/posts/widgets/bottom_loader.dart';
-import 'package:bloc_education/blocex3/posts/widgets/post_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/src/provider.dart';
+
+import '../bloc/post_bloc.dart';
+import '../widgets/bottom_loader.dart';
+import '../widgets/post_list_item.dart';
 
 class PostList extends StatefulWidget {
   const PostList({Key? key}) : super(key: key);
