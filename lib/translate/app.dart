@@ -1,5 +1,7 @@
+import 'package:bloc_education/translate/logic/cubit/translate_cubit.dart';
 import 'package:bloc_education/translate/view/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TranslateApp extends StatelessWidget {
   const TranslateApp({Key? key}) : super(key: key);
@@ -8,13 +10,11 @@ class TranslateApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Timer',
-      theme: ThemeData(
-        primaryColor: const Color.fromRGBO(109, 234, 255, 1),
-        colorScheme: const ColorScheme.light(
-          secondary: Color.fromRGBO(72, 74, 126, 1),
-        ),
+      theme: ThemeData.dark(),
+      home: BlocProvider(
+        create: (context) => TranslateCubit(['Kimsin', 'Кыргызстан']),
+        child: const TranslatePage(),
       ),
-      home: const TranslatePage(),
     );
   }
 }
